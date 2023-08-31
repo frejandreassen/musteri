@@ -1,0 +1,7 @@
+env: standard
+service: musteri
+runtime: nodejs16
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
