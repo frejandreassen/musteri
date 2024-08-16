@@ -27,7 +27,7 @@ function Calendar({ onDateSelect }) {
   const [datesLoaded, setDatesLoaded] = useState(false)
 
   useEffect(() => {
-    fetch('https://api.andreassens.se/items/musteri_lediga_dagar?filter={"_and": [{"datum": {"_gte": "$NOW"}},{"bokad_appelmust_liter": {"_lt": 100}}]}')
+    fetch('https://directus.andreassens.se/items/musteri_lediga_dagar?filter={"_and": [{"datum": {"_gte": "$NOW"}},{"bokad_appelmust_liter": {"_lt": 100}}]}')
         .then(response => response.json())
         .then(data => {
             setAvailableDates(data.data);

@@ -58,7 +58,7 @@ export default function Checkout({products}) {
     console.log(data)
   
     try {
-      const response = await fetch("https://api.andreassens.se/items/musteri_bokningar", {
+      const response = await fetch("https://directus.andreassens.se/items/musteri_bokningar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -96,7 +96,7 @@ export default function Checkout({products}) {
         formSubmitted ? (
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">Tack för din beställning!</h2>
-            <p>Vi kommer att kontakta dig snart med mer information.</p>
+            <p>Vi skickar ett bekräftelsemail till dig när vi har mottagit din beställning. Om du inte får ett mail - hör av dig.</p>
           </div>
         ) : (
         <form className="lg:grid lg:grid-cols-2 lg:gap-x-12 xl:gap-x-16" onSubmit={handleSubmit}>
@@ -155,7 +155,7 @@ export default function Checkout({products}) {
 
           {/* Order summary */}
           <div className="mt-10 lg:mt-0">
-            <h2 className="text-lg font-medium text-gray-900">Beställning</h2>
+            <h2 className="text-lg font-medium text-gray-900">Beställning (ungefär)</h2>
 
             <div className="mt-4 rounded-lg border border-gray-200 bg-white shadow-sm">
               <h3 className="sr-only">Items in your cart</h3>
